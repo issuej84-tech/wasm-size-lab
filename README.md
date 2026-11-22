@@ -4,8 +4,6 @@
 
 [Try the interactive demo](https://issuej84-tech.github.io/wasm-size-lab/) · [Reproduce the Binaryen experiment](research/README.md) · [See the first release](https://github.com/issuej84-tech/wasm-size-lab/releases/tag/v0.1.0)
 
-![Test status](https://github.com/issuej84-tech/wasm-size-lab/actions/workflows/test.yml/badge.svg)
-
 Binaryen 133 produced these two builds of the same Yasno calculator from the same input. The baseline skips the inlining passes and the candidate uses plain `-Oz`. Both builds pass the same calculator checks.
 
 | Metric | Baseline | Candidate | Change |
@@ -40,7 +38,7 @@ Add this step to a pull-request workflow after checking out the following files 
     json-report: wasm-size-report.json
 ```
 
-The action writes the Markdown report to the workflow's job summary, where reviewers can open it from the PR checks. A budget failure still publishes the summary. The optional `json-report` input writes a local JSON file for another action or an artifact upload. The output `brotli-delta` holds the signed difference in bytes. The comparison itself runs with read-only workflow permissions. The [self-test workflow](.github/workflows/test.yml) shows the action checking this repository's sample.
+The action writes the Markdown report to the workflow's job summary, where reviewers can open it from the PR checks. A budget failure still publishes the summary. The optional `json-report` input writes a local JSON file for another action or an artifact upload. The output `brotli-delta` holds the signed difference in bytes. The comparison itself runs with read-only workflow permissions. The [example workflow](examples/pull-request.yml) shows a complete setup using the checked-in sample files.
 
 ## What the report measures
 

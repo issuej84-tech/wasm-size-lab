@@ -1,0 +1,24 @@
+name: WebAssembly size budget
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  wasm-size:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: '26'
+      # Replace the sample paths with the outputs of your build steps.
+      - name: Compare WebAssembly builds
+        uses: issuej84-tech/wasm-size-lab@v0.1.0
+        with:
+          baseline: demo/yasno-baseline.wasm
+          candidate: demo/yasno-candidate.wasm
+          max-brotli-growth: '0'
+          json-report: wasm-size-report.json
