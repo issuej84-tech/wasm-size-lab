@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare the on-disk and compressed sizes of real WebAssembly builds.">
+  <title>Wasm Size Lab</title>
+  <link rel="stylesheet" href="lab.css">
+  <script type="module" src="lab.mjs"></script>
+</head>
+<body>
+  <header class="top">
+    <a class="wordmark" href="./" aria-label="Wasm Size Lab home"><span class="mark" aria-hidden="true"></span>Wasm Size Lab</a>
+    <a class="repo" href="https://github.com/issuej84-tech/wasm-size-lab">View on GitHub <span aria-hidden="true">↗</span></a>
+  </header>
+  <main>
+    <section class="intro">
+      <h1>Smaller file.<br>Bigger download.</h1>
+      <p>An optimization can shrink a WebAssembly binary and still make browsers download more bytes. Compare real builds and see what changed.</p>
+      <a class="install" href="https://github.com/issuej84-tech/wasm-size-lab#github-actions">Add to GitHub Actions <span aria-hidden="true">↗</span></a>
+    </section>
+    <section class="experiment" aria-labelledby="experiment-title">
+      <div class="experiment-head">
+        <div>
+          <h2 id="experiment-title">Compare builds</h2>
+          <p>Binaryen 133, Brotli quality 9</p>
+        </div>
+        <label class="case-select">Sample
+          <select id="case" disabled>
+            <option value="yasno">Yasno calculator</option>
+            <option value="rust">Rust calculator</option>
+            <option value="c">C checksum</option>
+          </select>
+        </label>
+      </div>
+      <div id="result" aria-live="polite">
+        <p>Loading the comparison…</p>
+      </div>
+      <template id="chart">
+        <p class="takeaway"></p>
+        <ul class="legend" aria-label="Chart legend">
+          <li><span class="swatch baseline"></span><span class="baseline-caption"></span></li>
+          <li><span class="swatch candidate"></span><span class="candidate-caption"></span></li>
+        </ul>
+        <div class="metrics"></div>
+        <details>
+          <summary>Raw bytes by section</summary>
+          <table>
+            <thead><tr><th scope="col">Section</th><th scope="col">Baseline</th><th scope="col">Candidate</th><th scope="col">Delta</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </details>
+        <a class="download">Download JSON</a>
+      </template>
+    </section>
+    <footer>
+      <a href="https://github.com/issuej84-tech/wasm-size-lab/tree/main/research">Reproduce the measurements</a>
+      <a href="https://github.com/WebAssembly/binaryen/issues/4322">Binaryen issue #4322</a>
+    </footer>
+  </main>
+</body>
+</html>

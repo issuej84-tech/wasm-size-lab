@@ -1,0 +1,37 @@
+name: WebAssembly Size Lab
+description: Compare raw, Brotli and gzip WebAssembly sizes in a job summary
+branding:
+  icon: bar-chart-2
+  color: purple
+inputs:
+  baseline:
+    description: Path to the baseline WebAssembly file
+    required: true
+  candidate:
+    description: Path to the candidate WebAssembly file
+    required: true
+  brotli-quality:
+    description: Brotli quality from 0 to 11
+    default: '9'
+  max-brotli-growth:
+    description: Maximum increase in Brotli bytes
+    default: ''
+  json-report:
+    description: Optional path to write the complete JSON report
+    default: ''
+outputs:
+  brotli-delta:
+    description: Candidate Brotli bytes minus baseline Brotli bytes
+    value: ${{ steps.compare.outputs.brotli-delta }}
+runs:
+  using: composite
+  steps:
+    - id: compare
+      shell: bash
+      env:
+        LAB_BASELINE: ${{ inputs.baseline }}
+        LAB_CANDIDATE: ${{ inputs.candidate }}
+        LAB_BROTLI_QUALITY: ${{ inputs.brotli-quality }}
+        LAB_MAX_GROWTH: ${{ inputs.max-brotli-growth }}
+        LAB_JSON_REPORT: ${{ inputs.json-report }}
+      run: node "$GITHUB_ACTION_PATH/bin/action.mjs"

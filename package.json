@@ -1,0 +1,21 @@
+{
+  "name": "wasm-size-lab",
+  "version": "0.1.0",
+  "description": "Compare raw, Brotli and gzip WebAssembly build sizes",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "wasm-size-lab": "./bin/wasm-size-lab.mjs"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/issuej84-tech/wasm-size-lab.git"
+  }
+}

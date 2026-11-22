@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "kinds": {
+    "baseline": "core",
+    "candidate": "core"
+  },
+  "compression": {
+    "brotliQuality": 9,
+    "gzipLevel": 9
+  },
+  "size": {
+    "raw": {
+      "baseline": 1566,
+      "candidate": 1558,
+      "delta": -8,
+      "percent": -0.5108556832694764
+    },
+    "brotli": {
+      "baseline": 856,
+      "candidate": 860,
+      "delta": 4,
+      "percent": 0.4672897196261682
+    },
+    "gzip": {
+      "baseline": 872,
+      "candidate": 875,
+      "delta": 3,
+      "percent": 0.3440366972477064
+    }
+  },
+  "sections": [
+    {
+      "name": "code",
+      "baseline": {
+        "bytes": 1381,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 1374,
+        "count": 1
+      },
+      "delta": -7
+    },
+    {
+      "name": "function",
+      "baseline": {
+        "bytes": 17,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 16,
+        "count": 1
+      },
+      "delta": -1
+    },
+    {
+      "name": "export",
+      "baseline": {
+        "bytes": 94,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 94,
+        "count": 1
+      },
+      "delta": 0
+    },
+    {
+      "name": "global",
+      "baseline": {
+        "bytes": 8,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 8,
+        "count": 1
+      },
+      "delta": 0
+    },
+    {
+      "name": "header",
+      "baseline": {
+        "bytes": 8,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 8,
+        "count": 1
+      },
+      "delta": 0
+    },
+    {
+      "name": "memory",
+      "baseline": {
+        "bytes": 7,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 7,
+        "count": 1
+      },
+      "delta": 0
+    },
+    {
+      "name": "type",
+      "baseline": {
+        "bytes": 51,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 51,
+        "count": 1
+      },
+      "delta": 0
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+node_modules/
+*.wasm
+!demo/*.wasm
+*.tgz
+coverage/
+research-output/
