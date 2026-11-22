@@ -78,7 +78,7 @@ h1 {
 .experiment-head h2 { font-size: clamp(1.18rem, 2vw, 1.6rem); letter-spacing: -.025em; }
 .experiment-head p, .case-select { color: var(--muted); font-size: .87rem; }
 .case-select { display: grid; }
-select { margin-top: .15rem; font: inherit; color: inherit; padding: .36rem .5rem; background: white; border: 1px solid #8a9bbc; border-radius: 3px; }
+select { max-width: 100%; margin-top: .15rem; font: inherit; color: inherit; padding: .36rem .5rem; background: white; border: 1px solid #8a9bbc; border-radius: 3px; }
 .takeaway { font-size: .98rem; font-weight: 700; margin: .9rem 0 .82rem; color: var(--blue-ink); }
 .takeaway.worse { color: var(--orange); }
 .legend { display: flex; flex-wrap: wrap; gap: .2rem 1.2rem; list-style: none; padding: 0; font-size: .78rem; color: var(--muted); margin: 0 0 .8rem; }
