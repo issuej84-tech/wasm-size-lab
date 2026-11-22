@@ -54,9 +54,11 @@ function verify(name, bytes) {
 }
 
 const variants = [
-  ['input', []],
-  ['size', ['-Oz']],
-  ['skipInlining', ['-Oz', '--skip-pass=inlining', '--skip-pass=inlining-optimizing']],
+  ['input', null, []],
+  ['size', 'input', ['-Oz']],
+  ['skipInlining', 'input', ['-Oz', '--skip-pass=inlining', '--skip-pass=inlining-optimizing']],
+  ['sizeAgain', 'size', ['-Oz']],
+  ['sizeAgainKeepLocalOrder', 'size', ['-Oz', '--skip-pass=reorder-locals']],
 ];
 const rows = {};
 for (const name of ['yasno', 'rust', 'c']) {
@@ -72,9 +74,9 @@ for (const name of ['yasno', 'rust', 'c']) {
       '-Wl,--no-entry', '-Wl,--export=checksum', '-Wl,--strip-all', cSource, '-o', input]);
   }
   rows[name] = {};
-  for (const [variant, flags] of variants) {
+  for (const [variant, baseVariant, flags] of variants) {
     const file = join(work, name + '-' + variant + '.wasm');
-    if (flags.length) run(args['wasm-opt'], [input, ...flags, '-o', file]);
+    if (baseVariant) run(args['wasm-opt'], [rows[name][baseVariant].file, ...flags, '-o', file]);
     const bytes = await readFile(file);
     verify(name, bytes);
     const { size } = compareWasm(bytes, bytes);
@@ -109,7 +111,7 @@ const result = {
     yasno: run('git', ['-C', yasno, 'rev-parse', 'HEAD']),
   },
   system: { platform: platform(), arch: arch(), cpu: cpus()[0]?.model },
-  variants: Object.fromEntries(variants),
+  variants: Object.fromEntries(variants.map(([name, input, flags]) => [name, { input, flags }])),
   results: Object.fromEntries(Object.entries(rows).map(([name, row]) =>
     [name, Object.fromEntries(Object.entries(row).map(([variant, item]) => [variant, summarize(item)]))])),
 };

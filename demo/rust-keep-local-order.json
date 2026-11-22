@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "kinds": {
+    "baseline": "core",
+    "candidate": "core"
+  },
+  "compression": {
+    "brotliQuality": 9,
+    "gzipLevel": 9
+  },
+  "size": {
+    "raw": {
+      "baseline": 2878,
+      "candidate": 2874,
+      "delta": -4,
+      "percent": -0.13898540653231412
+    },
+    "brotli": {
+      "baseline": 1410,
+      "candidate": 1397,
+      "delta": -13,
+      "percent": -0.9219858156028369
+    },
+    "gzip": {
+      "baseline": 1519,
+      "candidate": 1510,
+      "delta": -9,
+      "percent": -0.5924950625411455
+    }
+  },
+  "sections": [
+    {
+      "name": "code",
+      "baseline": {
+        "bytes": 2317,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 2313,
+        "count": 1
+      },
+      "delta": -4
+    },
+    {
+      "name": "data",
+      "baseline": {
+        "bytes": 425,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 425,
+        "count": 1
+      },
+      "delta": 0
+    },
+    {
+      "name": "export",
+      "baseline": {
+        "bytes": 77,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 77,
+        "count": 1
+      },
+      "delta": 0
+    },
+    {
+      "name": "function",
+      "baseline": {
+        "bytes": 12,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 12,
+        "count": 1
+      },
+      "delta": 0
+    },
+    {
+      "name": "global",
+      "baseline": {
+        "bytes": 11,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 11,
+        "count": 1
+      },
+      "delta": 0
+    },
+    {
+      "name": "header",
+      "baseline": {
+        "bytes": 8,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 8,
+        "count": 1
+      },
+      "delta": 0
+    },
+    {
+      "name": "memory",
+      "baseline": {
+        "bytes": 5,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 5,
+        "count": 1
+      },
+      "delta": 0
+    },
+    {
+      "name": "type",
+      "baseline": {
+        "bytes": 23,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 23,
+        "count": 1
+      },
+      "delta": 0
+    }
+  ]
+}

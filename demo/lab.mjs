@@ -2,6 +2,8 @@ const select = document.querySelector('#case');
 const result = document.querySelector('#result');
 const template = document.querySelector('#chart');
 const definition = {
+  'rust-rerun': { baseline: 'First -Oz', candidate: 'Second -Oz', file: 'rust-rerun' },
+  'rust-keep-local-order': { baseline: 'First -Oz', candidate: 'Second -Oz, local order kept', file: 'rust-keep-local-order' },
   yasno: { baseline: '-Oz, inlining skipped', candidate: '-Oz', file: 'yasno' },
   rust: { baseline: 'Compiler output', candidate: '-Oz', file: 'rust' },
   c: { baseline: 'Compiler output', candidate: '-Oz', file: 'c' },

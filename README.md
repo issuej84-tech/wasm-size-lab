@@ -2,15 +2,17 @@
 
 **Catch WebAssembly size regressions in pull requests.** Compare two builds by raw bytes, Brotli, gzip and the sections that changed.
 
-[Try the interactive demo](https://issuej84-tech.github.io/wasm-size-lab/) · [Reproduce the Binaryen experiment](research/README.md) · [See the first release](https://github.com/issuej84-tech/wasm-size-lab/releases/tag/v0.1.0)
+[Try the interactive demo](https://issuej84-tech.github.io/wasm-size-lab/) · [Reproduce the Binaryen experiment](research/README.md) · [Download the release](https://github.com/issuej84-tech/wasm-size-lab/releases/tag/v0.1.1)
 
-Binaryen 133 produced these two builds of the same Yasno calculator from the same input. The baseline skips the inlining passes and the candidate uses plain `-Oz`. Both builds pass the same calculator checks.
+Binaryen 133 shrank an already optimized Rust calculator on a second `-Oz` pass while increasing its Brotli payload. A rerun that kept the local-variable order matched the raw size and reduced the Brotli payload.
 
-| Metric | Baseline | Candidate | Change |
+| Rust build | Raw Wasm | Brotli | gzip |
 | --- | ---: | ---: | ---: |
-| Raw Wasm | 1,566 B | 1,558 B | −8 B |
-| Brotli | 856 B | 860 B | **+4 B** |
-| gzip | 872 B | 875 B | +3 B |
+| First `-Oz` | 2,878 B | 1,410 B | 1,519 B |
+| Second `-Oz` | 2,874 B | 1,436 B | 1,505 B |
+| Second `-Oz`, skipping `reorder-locals` | 2,874 B | 1,397 B | 1,510 B |
+
+The quick start uses two checked-in builds of the Yasno calculator. That pair saves 8 raw bytes and adds 4 Brotli bytes when the inlining passes are enabled.
 
 ## Quick start
 
@@ -30,7 +32,7 @@ Add this step to a pull-request workflow after checking out the following files 
 
 ```yaml
 - name: Compare WebAssembly builds
-  uses: issuej84-tech/wasm-size-lab@v0.1.0
+  uses: issuej84-tech/wasm-size-lab@v0.1.1
   with:
     baseline: out/baseline.wasm
     candidate: out/candidate.wasm

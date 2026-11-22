@@ -1,6 +1,6 @@
 {
   "name": "wasm-size-lab",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Compare raw, Brotli and gzip WebAssembly build sizes",
   "type": "module",
   "private": true,

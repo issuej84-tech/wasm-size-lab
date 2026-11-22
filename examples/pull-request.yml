@@ -16,7 +16,7 @@ jobs:
           node-version: '26'
       # Replace the sample paths with the outputs of your build steps.
       - name: Compare WebAssembly builds
-        uses: issuej84-tech/wasm-size-lab@v0.1.0
+        uses: issuej84-tech/wasm-size-lab@v0.1.1
         with:
           baseline: demo/yasno-baseline.wasm
           candidate: demo/yasno-candidate.wasm
