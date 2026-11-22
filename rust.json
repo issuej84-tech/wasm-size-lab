@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "kinds": {
+    "baseline": "core",
+    "candidate": "core"
+  },
+  "compression": {
+    "brotliQuality": 9,
+    "gzipLevel": 9
+  },
+  "size": {
+    "raw": {
+      "baseline": 5424,
+      "candidate": 2878,
+      "delta": -2546,
+      "percent": -46.93952802359882
+    },
+    "brotli": {
+      "baseline": 2491,
+      "candidate": 1410,
+      "delta": -1081,
+      "percent": -43.39622641509434
+    },
+    "gzip": {
+      "baseline": 2627,
+      "candidate": 1519,
+      "delta": -1108,
+      "percent": -42.1773886562619
+    }
+  },
+  "sections": [
+    {
+      "name": "code",
+      "baseline": {
+        "bytes": 4797,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 2317,
+        "count": 1
+      },
+      "delta": -2480
+    },
+    {
+      "name": "type",
+      "baseline": {
+        "bytes": 67,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 23,
+        "count": 1
+      },
+      "delta": -44
+    },
+    {
+      "name": "element",
+      "baseline": {
+        "bytes": 9,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 0,
+        "count": 0
+      },
+      "delta": -9
+    },
+    {
+      "name": "table",
+      "baseline": {
+        "bytes": 7,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 0,
+        "count": 0
+      },
+      "delta": -7
+    },
+    {
+      "name": "function",
+      "baseline": {
+        "bytes": 18,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 12,
+        "count": 1
+      },
+      "delta": -6
+    },
+    {
+      "name": "data",
+      "baseline": {
+        "bytes": 425,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 425,
+        "count": 1
+      },
+      "delta": 0
+    },
+    {
+      "name": "export",
+      "baseline": {
+        "bytes": 77,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 77,
+        "count": 1
+      },
+      "delta": 0
+    },
+    {
+      "name": "global",
+      "baseline": {
+        "bytes": 11,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 11,
+        "count": 1
+      },
+      "delta": 0
+    },
+    {
+      "name": "header",
+      "baseline": {
+        "bytes": 8,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 8,
+        "count": 1
+      },
+      "delta": 0
+    },
+    {
+      "name": "memory",
+      "baseline": {
+        "bytes": 5,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 5,
+        "count": 1
+      },
+      "delta": 0
+    }
+  ]
+}

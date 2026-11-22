@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "kinds": {
+    "baseline": "core",
+    "candidate": "core"
+  },
+  "compression": {
+    "brotliQuality": 9,
+    "gzipLevel": 9
+  },
+  "size": {
+    "raw": {
+      "baseline": 271,
+      "candidate": 254,
+      "delta": -17,
+      "percent": -6.273062730627307
+    },
+    "brotli": {
+      "baseline": 173,
+      "candidate": 157,
+      "delta": -16,
+      "percent": -9.248554913294798
+    },
+    "gzip": {
+      "baseline": 200,
+      "candidate": 176,
+      "delta": -24,
+      "percent": -12
+    }
+  },
+  "sections": [
+    {
+      "name": "global",
+      "baseline": {
+        "bytes": 11,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 0,
+        "count": 0
+      },
+      "delta": -11
+    },
+    {
+      "name": "code",
+      "baseline": {
+        "bytes": 211,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 205,
+        "count": 1
+      },
+      "delta": -6
+    },
+    {
+      "name": "export",
+      "baseline": {
+        "bytes": 23,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 23,
+        "count": 1
+      },
+      "delta": 0
+    },
+    {
+      "name": "function",
+      "baseline": {
+        "bytes": 4,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 4,
+        "count": 1
+      },
+      "delta": 0
+    },
+    {
+      "name": "header",
+      "baseline": {
+        "bytes": 8,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 8,
+        "count": 1
+      },
+      "delta": 0
+    },
+    {
+      "name": "memory",
+      "baseline": {
+        "bytes": 5,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 5,
+        "count": 1
+      },
+      "delta": 0
+    },
+    {
+      "name": "type",
+      "baseline": {
+        "bytes": 9,
+        "count": 1
+      },
+      "candidate": {
+        "bytes": 9,
+        "count": 1
+      },
+      "delta": 0
+    }
+  ]
+}
